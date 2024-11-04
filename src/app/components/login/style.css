@@ -1,0 +1,97 @@
+.main{
+    display: inline-block;
+    text-align: center;
+    margin-left: 540px ;
+    margin-top: 88px;
+}
+
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+}
+.logo-img-text{
+    display: flex;
+    flex-direction: column;
+    
+}
+.logo-img-text img {
+    width: 173px;
+    height: 44px;
+    text-align: center;
+    margin-left: 52px;
+}
+
+.login-text2{
+    margin-top: 2px;
+    color: rgb(68, 65, 65);
+}
+.login-text {
+    margin-bottom: 2.5px ;
+    font-size: 33px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 360px;
+    height: 120px;
+}
+.inputpassword{
+    padding: 12px;
+    background-color: rgba(83, 78, 78, 0.089);
+    border-style: none ;
+    border-radius: 5px;
+}
+.inputphonenumber{
+    padding: 12px;
+    background-color: rgba(83, 78, 78, 0.089);
+    border-style: none ;
+    border-radius: 5px;
+}
+.register-button{
+    width: 360px;
+    height: 47px;
+    color: white;
+    background-color: rgba(45, 45, 224, 0.668);
+    border-style: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.donthaveacca{
+    color: rgb(94, 93, 93);
+}
+.link-Signup{
+    text-decoration: none;
+    color: rgba(45, 45, 224, 0.668);
+}
+.button a{
+    text-decoration: none;
+}
+
+.register-button:hover{
+    cursor: pointer;
+    background-color: rgba(45, 45, 224, 0.438);
+}
+                @media (max-width : 1000px){ 
+            .main {
+                margin-left: 210px;
+            }
+        }
+        @media (max-width : 800px){ 
+            .main {
+                margin-left: 160px;
+            }
+        }
+                @media (max-width : 600px){ 
+            .main {
+                margin-left: 100px;
+            }
+        }
+                        @media (max-width : 400px){ 
+            .main {
+                margin-left: 50px;
+            }
+        }

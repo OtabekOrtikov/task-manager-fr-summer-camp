@@ -1,0 +1,163 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+.dashboard--item {
+    width: 100%;
+    height: auto;
+    background-color: $white;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 13px;
+    position: relative;
+
+    &_title {
+        margin-bottom: 6px;
+        @include heading16;
+    }
+    &_desc {
+        color: $secondary;
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+        
+        @include text12;
+    }
+
+    &_info {
+        @include flexbox(center, space-between);
+        
+        &-priority {
+            .priority {
+                color: #303240;
+                padding: 4px;
+                background-color: $low;
+                border-radius: 4px;
+                @include text10;
+
+                &.high-priority {
+                    background-color: $top;
+                }
+                &.medium-priority {
+                    background-color: $medium;
+                }
+            }
+        }
+        &-duedate {
+            color: $secondary;
+            @include text12;
+        }
+    }
+
+    .dashboard--item-actions {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+
+        .favourite-icon {
+            color: #cccccc;
+            &.gold {
+                color: gold
+            }
+
+            &:active{
+                font-size: 1.1em;
+            }
+            &:hover {
+                color: rgb(255, 196, 0);
+            }
+        }
+    }
+}
+
+.task {
+    cursor: pointer;
+
+    .task-column {
+        &--icon {
+            display: none;
+            margin-left: 10px;
+        }
+    }
+
+    &:hover {
+        .task-column {
+            color: #5847F1;
+
+            &--icon {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+td.priority-column {
+    .priority {
+       display: inline-block;
+       height: 100%;
+       padding: 3px 8px;
+       border-radius: 4px;
+       color: #303240;
+       font-size: 14px;
+       font-weight: 400;
+       line-height: 22px;
+       box-sizing: border-box;
+    }
+
+    .priority {
+        &.low-priority {
+            background-color: #C1E288;
+        }
+
+        &.high-priority {
+            background-color: #FBB6B6;
+        }
+
+        &.medium-priority {
+            background-color: #FFEDC9;
+        }
+    }
+}
+
+td.status-column {
+    .status {
+        display: inline-block;
+        height: 28px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        color: #303240;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        box-sizing: border-box;
+    }
+
+    .status {
+        &__done {
+            background-color: #C1E288;
+        }
+
+        &__in_progress {
+            background-color: #FFEDC9;
+        }
+
+        &__review {
+            background-color: #E1E3E8;
+        }
+
+        &__todo {
+            background-color: #D3EAFF;
+        }
+    }
+}
+
+.dashboard--item {
+    position: relative;
+}
+
+.dashboard--item.favourite {
+    border: 1px solid gold;
+}

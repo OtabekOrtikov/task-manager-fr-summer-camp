@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $black;
+    color: $white;
+  
+    .header {
+        &--top,
+        &--bottom {
+            padding: 24px 80px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba($white, 0.08);
+            border-width: 1px;
+            position: relative;
+
+            .container {
+                @include flexbox(center, space-between);
+            }
+        }
+
+        &--logout {
+            @include flexbox(center, flex-start);
+        }
+
+        &--burger-menu {
+            position: relative;
+            height: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+  
+    .logo {
+        cursor: default;
+        gap: 9px;
+
+        @include flexbox(center, flex-start);
+  
+        &--image {
+            height: 19px;
+        }
+  
+        &--heading {
+            font-size: 15px;
+            line-height: 18px;
+            font-weight: 600;
+        }
+    }
+  
+    .burger-toggle {
+       display: none;
+       justify-content: center;
+    }
+
+    .burger-menu {
+        flex-direction: column;
+        height: 16px;
+        cursor: pointer;
+        
+        @include flexbox(center, space-between);
+
+       .burger-menu--first-line,
+       .burger-menu--second-line,
+       .burger-menu--third-line {
+            width: 100%;
+            height: 2px;
+            background-color: $white;
+            border-radius: 4px;
+        }
+
+        &--content {
+            right: 0;
+            top: 69px;
+            width: 100%;
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in-out;
+
+           .personal-info--name,
+           .personal-info--role,
+           .phone-number--top,
+           .phone-number--bottom {
+               margin: 0;
+            }
+
+            .logout-button {
+                padding: 14px 12px;
+                background-color: $primary;
+                color: $white;
+                border-radius: 4px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+
+                @include flexbox(center, center);
+            }
+
+        }
+
+        &--container {
+            display: flex;
+            flex-direction: column;
+            padding: 24px 30px;
+        }
+
+        #burger-toggle:checked + .burger-menu + .burger-menu--content {
+            display: block;
+        }
+    }
+
+    #header-logout {
+        display: flex;
+        width: 24px;
+        height: 20px; 
+        background-size: cover;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        color: $white;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        font-size: 1em;
+    }
+}
+
+.header--bottom {
+    .personal-info {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+
+        &--top {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        &--name {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        &--role {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $low;
+            color: $role-color;
+            text-align: center;
+            padding: 0px 1px;
+            width: 43px;
+            height: 18px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        &--question {
+            margin: 0;
+            font-size: 16px;
+            color: $white-60;
+        }
+    }
+
+    .phone-number {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include flexbox(flex-end, center);
+
+        &--top {
+            font-size: 14.5px;
+            color: $white-60;
+            text-align: right;
+            margin: 5px 0px;
+        }
+
+        &--bottom {
+            font-size: 14.5px;
+            color: $white;
+            text-align: right;
+            margin: -1px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header--burger-menu {
+      display: none;
+    }
+  
+    header {
+        .header--logout {
+            display: flex;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        .header--top,
+        .header--bottom {
+            padding: 24px;
+        }
+        
+        .header--top {
+            display: flex;
+        }
+        .header--logout {
+            display: none;
+        }
+
+        .header--burger-menu {
+            position: relative;
+            width: 24px;
+
+            @include flexbox(center, center);
+        }
+        
+        .header--bottom { 
+            display: flex;
+
+            .phone-number {
+                display: none;
+            }
+
+            .personal-info {
+               display: flex;
+            }
+        }
+
+        .burger-menu {
+            position: absolute;
+            width: 20px;
+            z-index: 5;
+
+            @include flexbox(center, space-between);
+
+            &--first-line {
+                transform-origin: center;
+                transition: transform 0.4s ease-in-out;
+            }
+
+            &--second-line {
+                transition: transform 0.2s ease-in-out;
+            }
+
+            &--third-line {
+                transform-origin: center;
+                transition: transform 0.4s ease-in-out;
+            }
+        }
+
+        .burger-toggle {
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 6;
+            margin: 0;
+        }
+
+        .burger-toggle:checked ~ .burger-menu .burger-menu--first-line {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .burger-toggle:checked ~ .burger-menu .burger-menu--second-line {
+            transform: scaleY(0);
+        }
+
+        .burger-toggle:checked ~ .burger-menu .burger-menu--third-line {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .burger-toggle:checked ~ .burger-menu #lines {
+            background-color: $white;
+        }
+
+        .burger-toggle:checked ~ .burger-menu--content {
+            transform: translateX(0);
+        }
+
+        .burger-menu--content {
+            background-color: $black;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            position: fixed;
+            transition: transform .4s ease-in-out;
+            z-index: 6;
+
+            .personal-info {
+                display: flex;
+                flex-direction: column;
+                row-gap: 3px;
+        
+                &--top {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+        
+                &--name {
+                    font-size: 24px;
+                    margin: 0;
+                }
+        
+                &--role {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $low;
+                    color: $role-color;
+                    text-align: center;
+                    padding: 0px 1px;
+                    width: 43px;
+                    height: 18px;
+                    border-radius: 4px;
+                    font-size: 10px;
+                }
+            }
+
+            .phone-number {
+                color: $white-60;
+                margin-top: 5px;
+                margin-bottom: 45px;
+            }
+        }
+    }
+}
+
+// Needed to get rid of the padding manually because I couldn't find it in the code
+@media screen and (max-width: 1280px) {
+    .container {
+        padding: 0;
+    }
+}

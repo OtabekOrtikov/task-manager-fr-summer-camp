@@ -1,0 +1,99 @@
+@mixin flexbox($items, $content) {
+    display: flex;
+    align-items: $items;
+    justify-content: $content;
+}
+
+
+@mixin heading40() {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+@mixin heading32() {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+@mixin heading24() {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+@mixin heading20() {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+@mixin heading16() {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+@mixin heading14() {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+@mixin heading10() {
+    font-size: 10px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+@mixin text20() {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+@mixin text16() {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+@mixin text14() {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+@mixin text12() {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+@mixin text10() {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+
+@mixin subtitle10() {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+@mixin subtitle12() {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+@mixin subtitle14() {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+@mixin subtitle16() {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+@mixin subtitle20() {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+@mixin subtitle24() {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}

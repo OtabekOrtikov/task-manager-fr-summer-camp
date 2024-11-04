@@ -1,0 +1,155 @@
+.task-list {
+  width: 100%;
+  min-width: 1280px;
+  margin-top: 28px;
+  text-align: left;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #475467;
+
+  &--wrapper {
+    overflow-x: scroll;
+  }
+
+  &--wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  &--heading {
+    height: 48px;
+    background-color: #F4F5F7;
+
+    th {
+      padding: 13px 0 13px 24px;
+      color: #475467;
+      font-weight: 400;
+    }
+  }
+
+  &--row {
+    height: 72px;
+
+    td {
+      max-height: 72px;
+      box-sizing: border-box;
+      padding: 24px 0 24px 24px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+      &.favorite-column {
+        border-bottom: white;
+        padding: 5px;
+        width: 5px;
+
+        .favourite-icon {
+          color: #cccccc;
+          cursor: pointer;
+          font-size: larger;
+
+          &:active {
+            font-size: 1.1em;
+          }
+          &:hover {
+              color: rgb(255, 196, 0);
+          }
+
+          &.gold {
+              color: gold;
+
+              &:hover {
+                color: rgb(255, 196, 0);
+            }
+          }
+        }
+      }
+
+      &.task-column {
+        color: #202022;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+      }
+
+      &:last-of-type {
+        padding-right: 24px;
+      }
+    }
+  }
+
+  .task-column {
+    width: 252px;
+  }
+
+  .description-column {
+    width: 451px;
+
+    p {
+      width: 427px;
+      height: 22px;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .creation-date-column {
+    width: 145px;
+  }
+
+  .due-date-column {
+    width: 145px;
+  }
+
+  .priority-column {
+    width: 145px;
+  }
+
+  .status-column {
+    width: 145px;
+  }
+
+  td,
+  th {
+    &.status-column {
+      padding-right: 24px;
+      text-align: right;
+    }
+  }
+}
+
+.add-card,
+.add-card-button {
+display: flex;
+align-items: center;
+background-color: transparent;
+border: 2px solid transparent;
+border-radius: 4px;
+color: #5847F1;
+padding: 8px 6px;
+text-align: center;
+text-decoration: none;
+font-size: 14px;
+line-height: 20px;
+cursor: pointer;
+margin: 16px 0 0 18px;
+
+.icon {
+  color: #5847F1;
+  margin-right: 9px;
+}
+
+&:hover {
+  border: 2px solid #5847F1;
+}
+
+&:active {
+  background-color: #5847F1;
+  border: 2px solid #5847F1;
+  color: #FFFFFF;
+
+  .icon {
+    color: #FFFFFF;
+  }
+}
+}
